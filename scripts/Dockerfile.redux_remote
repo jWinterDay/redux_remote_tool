@@ -1,0 +1,10 @@
+FROM node:12
+
+WORKDIR /usr/redux_remote
+
+RUN su root &&\
+    npm install -g remotedev-server --unsafe-perm
+
+EXPOSE 8000
+
+CMD [ "remotedev", "--port 8000" ]
